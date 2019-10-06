@@ -8,23 +8,27 @@
 </template>
 
 <script>
-    import src1 from "../assets/table/jingxuan(1)@2x.png"
-    import src2 from "../assets/table/fenlei(1)@2x.png"
-    import src3 from "../assets/table/shequ(1)@2x.png"
-    import src4 from "../assets/table/wode(1)@2x.png"
+    import src1 from "../assets/home/首页logo@2x.png"
+    import src2 from "../assets/home/分类logo@2x.png"
+    import src3 from "../assets/home/购物车logo@2x.png"
+    import src4 from "../assets/home/我的logo@2x.png"
     export default {
         name: "sousuo",
         data(){
             return{
                 text:[{
-                    src:src1,test:'精选',href:'/home'
+                    src:src1,test:'首页',href:'/home'
                 },{
-                    src:src2,test:'社区',href:'/community'
+                    src:src2,test:'分类',href:'/community'
                 },{
-                    src:src3,test:'分类',href:'/classify'
+                    src:src3,test:'购物车',href:'/classify'
                 },{
                     src:src4,test:'我的',href:'/mine'
                 }],
+            }
+        },methods: {
+            tab (index) {
+                this.curId = index;
             }
         }
     }
@@ -37,20 +41,21 @@
     width: 100%;
     height: .5rem;
     background-color: #fff;
+    z-index: 10;
     /*padding-left: .35rem;*/
     a{
         float: left;
         height: .5rem;
         width: .9rem;
         text-decoration: none;
-        color: #AB7246;
+        color: #333;
         font-size: .1rem;
         text-align: center;
         padding-top: .1rem;
         span:nth-child(1){
             display: block;
-            width: .18rem;
-            height: .19rem;
+            width: .21rem;
+            height: .21rem;
             background: no-repeat center / cover;
             margin: 0 auto;
         }

@@ -19,25 +19,79 @@
         <span>更多拼团
         <img src="../assets/home/图层11拷贝@2x.png"></span>
       </div>
-      <div></div>
+      <div>
+        <div v-for="(item,index) in group">
+          <img :src="item.src">
+          <p>{{item.text1}}</p>
+          <span>{{item.text2}} <s>{{item.text3}}</s></span>
+        </div>
+      </div>
     </div>
     <div class="nav">
-        <a v-for="item in texts" :href="item.href">
+        <a v-for="item in texts" :href=item.href>
           <p>{{item.text}}</p>
           <span>{{item.bottom}}</span>
         </a>
     </div>
-
-    <div class="content">
-      <div id="one" class="content1">
-        <div class="title">精选商品</div>
-        <div class="text">
-          <img src="../assets/home/感冒灵颗粒@2x.png">
-          <p>加拿大原装进口 原始猎食渴望...</p>
-          <p><span>￥</span><span>760</span><span>已售出13227</span></p>
-        </div>
+    <div id="one" class="content">
+      <div  class="content1">
+      <div v-for="(item,index) in content" class="text">
+        <img :src=item.src>
+        <p>{{item.p1}}</p>
+        <p>{{item.p2}}</p>
+        <p><span>￥</span><span>10.50</span><span></span></p>
       </div>
-
+    </div>
+    </div>
+    <div id="two" class="content">
+      <div  class="content1">
+      <div v-for="(item,index) in content" class="text">
+        <img :src=item.src>
+        <p>{{item.p1}}</p>
+        <p>{{item.p2}}</p>
+        <p><span>￥</span><span>10.50</span><span></span></p>
+      </div>
+    </div>
+    </div>
+    <div id="three" class="content">
+      <div  class="content1">
+      <div v-for="(item,index) in content" class="text">
+        <img :src=item.src>
+        <p>{{item.p1}}</p>
+        <p>{{item.p2}}</p>
+        <p><span>￥</span><span>10.50</span><span></span></p>
+      </div>
+    </div>
+    </div>
+    <div id="four" class="content">
+      <div  class="content1">
+      <div v-for="(item,index) in content" class="text">
+        <img :src=item.src>
+        <p>{{item.p1}}</p>
+        <p>{{item.p2}}</p>
+        <p><span>￥</span><span>10.50</span><span></span></p>
+      </div>
+    </div>
+    </div>
+    <div id="five" class="content">
+      <div  class="content1">
+      <div v-for="(item,index) in content" class="text">
+        <img :src=item.src>
+        <p>{{item.p1}}</p>
+        <p>{{item.p2}}</p>
+        <p><span>￥</span><span>10.50</span><span></span></p>
+      </div>
+    </div>
+    </div>
+    <div id="six" class="content">
+      <div  class="content1">
+      <div v-for="(item,index) in content" class="text">
+        <img :src=item.src>
+        <p>{{item.p1}}</p>
+        <p>{{item.p2}}</p>
+        <p><span>￥</span><span>10.50</span><span></span></p>
+      </div>
+    </div>
     </div>
     <Move></Move>
   </div>
@@ -63,6 +117,8 @@ import inner5 from '../assets/home/季节@2x.png';
 import inner6 from '../assets/home/营养@2x.png';
 import inner7 from '../assets/home/成人@2x.png';
 import inner8 from '../assets/home/特效@2x.png';
+import grout1 from '../assets/home/藿香正气@2x.png';
+import content1 from '../assets/home/感冒灵颗粒@2x.png';
 
 
 export default {
@@ -105,7 +161,21 @@ export default {
               },{
               site:img8,text:'新特效药',src:inner8
               }],
-
+          group:[
+              {src:grout1,text1:'太极藿香正气口服液',text2:'¥18.80',text3:'24.00'
+              },{src:grout1,text1:'太极藿香正气口服液',text2:'¥18.80',text3:'24.00'
+              },{src:grout1,text1:'太极藿香正气口服液',text2:'¥18.80',text3:'24.00'
+              },{src:grout1,text1:'太极藿香正气口服液',text2:'¥18.80',text3:'24.00'
+              },{src:grout1,text1:'太极藿香正气口服液',text2:'¥18.80',text3:'24.00'
+              },{src:grout1,text1:'太极藿香正气口服液',text2:'¥18.80',text3:'24.00'
+              },{src:grout1,text1:'太极藿香正气口服液',text2:'¥18.80',text3:'24.00'
+              },{src:grout1,text1:'太极藿香正气口服液',text2:'¥18.80',text3:'24.00'
+              },{src:grout1,text1:'太极藿香正气口服液',text2:'¥18.80',text3:'24.00'
+              },],
+          content:[{src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},
+              {src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},
+              {src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},
+              {src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},]
       }
     }
 }
@@ -113,9 +183,6 @@ export default {
 <style lang="scss" >
   body{
     background-color: #f6f7f8;
-  }
-  .nav::-webkit-scrollbar {
-    display: none;
   }
 .banner{
   height: 2rem;
@@ -127,14 +194,13 @@ export default {
     background: url("../assets/home/banner@2x.png") no-repeat center / cover;
   }
 }
-  .nav{
-  height: .58rem;
-    /*width: 100%;*/
-  position: sticky;
-  z-index: 5;
-  top: 0;
+  .home .nav{
+    height: .58rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     background: #f6f7f8;
-    padding: 0 .16rem;
+    padding: 0 .15rem 0 .15rem;
     a{
       font-size:0.16rem;
       display: block;
@@ -165,8 +231,7 @@ export default {
   width: 3.43rem;
   height: 1.66rem;
   z-index: 3;
-  margin: 0 auto;
-  margin-top: -.32rem;
+  margin: -.32rem .15rem 0 .15rem;
   border-radius: .09rem;
   overflow: hidden;
   div{
@@ -197,14 +262,13 @@ export default {
   }
 }
 .group{
-  width:3.43rem;
   height:1.9rem;
   background:rgba(255,255,255,1);
   box-shadow:.02rem .02rem .02rem .02rem rgba(116,176,90,0.16);
   border-radius:.09rem;
-  margin: 0 auto;
-  margin-top: .1rem;
-  div:nth-child(1){
+  margin: .1rem .15rem 0 .15rem;
+
+  >div:nth-child(1){
     height: .2rem;
     padding: .1rem .1rem 0 .1rem;
     span:nth-child(1){
@@ -227,15 +291,106 @@ export default {
       text-align: center;
       color: rgba(255,97,0,1);
       line-height: .17rem;
-      margin-top: .05rem;
+      margin-top: .02rem;
       img{
         height: .1rem;
         width: .04rem;
       }
     }
   }
-  div:nth-child(2){
+  >div:nth-child(2){
+      height: 1.7rem;
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling:touch;
+    >div{
+      width: 1rem;
+      height: 1.2rem;
+      padding-top: .3rem;
+      float: left;
+      margin-left: .11rem;
+      img{
+        width: .6rem;
+        height: .45rem;
+        margin: 0 auto;
+        display: block;
+        padding: 0 .13rem 0 .07rem;
+        margin-bottom: .15rem;
+      }
+      p{
+        font-size: .12rem;
+        line-height: .16rem;
+        margin-bottom: .05rem;
+        color: #333;
+      }
+      span{
+        color: #ff0000;
+        font-size: .13rem;
+        line-height: .16rem;
+        s{
+          text-align: right;
+          font-size: .1rem;
+          color: #666;
+        }
+      }
 
+    }
+  }
+}
+
+.content{
+  width: 94%;
+  height: 5.06rem;
+  margin: 0 .15rem 0 .15rem;
+  .content1 {
+    .text {
+      height: 2.46rem;
+      width: 1.68rem;
+      background-color: #fff;
+      border-radius: .1rem;
+      margin-right: .07rem;
+      float: left;
+      margin-bottom: .07rem;
+      img {
+        height: 1rem;
+        display: block;
+        margin: 0 auto;
+        padding-top: .38rem;
+        margin-bottom: .3rem;
+      }
+      p {
+        margin-left: .1rem;
+        line-height: .22rem;
+        &:nth-child(2) {
+          font-size: .13rem;
+          color: #333;
+        }
+        &:nth-child(3) {
+          font-size: .11rem;
+          color: #666;
+        }
+        &:nth-child(4) {
+          margin-top: .1rem;
+          span:nth-child(1) {
+            font-size: .17rem;
+            color: #ff0000;
+          }
+          span:nth-child(2) {
+            font-size: .17rem;
+            color: #ff0000;
+          }
+          span:nth-child(3) {
+            display: block;
+            float: right;
+            height: .16rem;
+            width: .16rem;
+            margin-right: .14rem;
+            background: url("../assets/home/购物车.svg") no-repeat center / cover;
+          }
+        }
+      }
+    }
   }
 }
 </style>

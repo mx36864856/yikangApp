@@ -33,7 +33,7 @@
             line-height:0.3rem;
             img{
                 float: left;
-                margin-top: .09rem;
+                margin-top: .07rem;
                 &:nth-child(1){
                     height: .14rem;
                     width: .11rem;
@@ -43,7 +43,7 @@
                     height: .06rem;
                     width: .12rem;
                     margin-left: .05rem;
-                    margin-top: .13rem;
+                    margin-top: .11rem;
                 }
             }
             span{
