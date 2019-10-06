@@ -19,9 +19,9 @@
                 text:[{
                     src:src1,test:'首页',href:'/home'
                 },{
-                    src:src2,test:'分类',href:'/community'
+                    src:src2,test:'分类',href:'/classify'
                 },{
-                    src:src3,test:'购物车',href:'/classify'
+                    src:src3,test:'购物车',href:'/community'
                 },{
                     src:src4,test:'我的',href:'/mine'
                 }],

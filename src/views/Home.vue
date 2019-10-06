@@ -180,8 +180,8 @@ export default {
     }
 }
 </script>
-<style lang="scss" >
-  body{
+<style lang="scss" scoped>
+  body,html{
     background-color: #f6f7f8;
   }
 .banner{

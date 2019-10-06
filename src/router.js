@@ -6,6 +6,7 @@ import  Classify from './views/Classify.vue'
 import  Community from './views/Community.vue'
 import  Catalogue from './views/Catalogue.vue'
 import  Space from './views/Space.vue'
+import  Set from './views/Set.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -49,6 +50,10 @@ export default new Router({
           path:'/space',
           name:'space',
           component: Space
-      }
+      },{
+          path: '/set',
+          name: 'set',
+          component: Set
+      },
   ]
 })

@@ -16,6 +16,7 @@
   }
   html{
     font-size: 26.67vw;
+    background-color: #f6f7f8;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;

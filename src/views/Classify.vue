@@ -1,26 +1,49 @@
 <template>
     <div class="classify">
         <div class="header">
-            <div>猫咪V</div>
             <div>
-                <img src="../assets/搜索.svg" alt=""><input type="text" placeholder="请输入搜索内容">
-            </div>
-            <a href="/space"><img src="../assets/购物车.svg" alt=""></a>
-            <img src="../assets/提醒.svg" alt="">
-        </div>
-        <div class="classify-top">
-            <div class="select">分类</div>
-            <div>品牌</div>
+                <img src="../assets/home/图层2@2x.png" alt=""><input type="text" placeholder="新用户注册领100元现金券"></div>
+            <img src="../assets/home/扫一扫@2x.png" alt="">
         </div>
         <div class="content">
             <div class="content-1">
                 <p v-on:click="tab(index)" :class="{border: index === curId}" v-for="(item,index) in test" >{{item.text}}</p>
             </div>
-            <div v-show="index===curId" v-for="(item, index) in test">
-                <p>{{item.text}}</p>
-                <div v-for="(item,index) in content">
-                    <img :src="item.url">
+            <div class="content-3"></div>
+            <div class="content-2" >
+                <div v-show="index===curId" v-for="(item, index) in test">
                     <p>{{item.text}}</p>
+                    <div v-for="(item,index) in content">
+                        <img :src="item.url">
+                        <p>{{item.text}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-2" >
+                <div v-show="index===curId" v-for="(item, index) in test">
+                    <p>{{item.text}}</p>
+                    <div v-for="(item,index) in content">
+                        <img :src="item.url">
+                        <p>{{item.text}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-2" >
+                <div v-show="index===curId" v-for="(item, index) in test">
+                    <p>{{item.text}}</p>
+                    <div v-for="(item,index) in content">
+                        <img :src="item.url">
+                        <p>{{item.text}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-2" >
+                <div v-show="index===curId" v-for="(item, index) in test">
+                    <p>{{item.text}}</p>
+                    <div v-for="(item,index) in content">
+                        <img :src="item.url">
+                        <p>{{item.text}}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,38 +66,38 @@
                 curId: 0,
                 test:[
                     {
-                    text:'为你推荐'
+                    text:'医药馆'
                 },{
-                    text:'精选国际'
+                    text:'器械馆'
                 },{
-                    text:'猫咪洗浴'
+                    text:'养生保健馆'
                 },{
-                    text:'消暑补水'
+                    text:'成人用品馆'
                 },{
-                    text:'猫咪主粮'
+                    text:'生活馆'
                 },{
-                    text:'猫咪零食'
+                    text:'中药馆'
                 },{
-                    text:'猫咪美容'
+                    text:'母婴商场'
                 },{
-                    text:'猫咪玩具'
+                    text:'临床新特药'
                 },{
-                    text:'猫咪保健'
+                    text:'增值服务'
                 },{
-                    text:'猫咪护理'
+                    text:'生活便利品'
                 },],
                 content:[{
-                    url:img,text:'进口猫粮'
+                    url:img,text:'感冒发烧'
                 },{
-                    url:img,text:'进口猫粮'
+                    url:img,text:'感冒发烧'
                 },{
-                    url:img,text:'进口猫粮'
+                    url:img,text:'感冒发烧'
                 },{
-                    url:img,text:'进口猫粮'
+                    url:img,text:'感冒发烧'
                 },{
-                    url:img,text:'进口猫粮'
+                    url:img,text:'感冒发烧'
                 },{
-                    url:img,text:'进口猫粮'
+                    url:img,text:'感冒发烧'
                 },],
 
             }
@@ -88,138 +111,121 @@
 </script>
 
 <style lang="scss" scoped>
+    body{
+        background-color: #f6f7f8;
+    }
     .header{
         width: 100%;
         height: .3rem;
-        padding: .1rem 0 .1rem;
-        background-color: #f7f5ef;
+        padding: .1rem 0 .1rem 0;
+        background-color: #41bd96;
         div{
             float: left;
             &:nth-child(1){
-                padding: 0 .1rem;
-                height: .3rem;
-                font-size: .18rem;
-                font-weight:bold;
-                color:rgba(51,51,51,1);
-                line-height:0.3rem;
-
-            }
-            &:nth-child(2){
                 position: relative;
+                margin-left: .06rem;
                 img{
-                    height: .2rem;
+                    height: .16rem;
+                    width: .1rem;
                     position: absolute;
-                    top: .05rem;
+                    top: .08rem;
                     z-index: 2;
+                    left: 3rem;
                 }
                 input{
-                    width:2rem;
+                    width:3.12rem;
                     height:0.3rem;
-                    background:rgba(255,255,255,1);
-                    padding-left: .26rem;
+                    background:rgba(230,255,238,1);
+                    padding-left: .13rem;
                     position: absolute;
                     border: 0 solid;
-                    border-radius: .05rem;
+                    border-radius: .15rem;
                     outline: none;
-                    font-size: .12rem;
+                    font-size: .14rem;
+                    color: #999;
                 }
             }
         }
-        a{
-            img{
+        >img{
             float: right;
-            height: .18rem;
-            /*width: .31rem;*/
+            height: .19rem;
+            width: .19rem;
             margin-right: .13rem;
-            margin-top: .07rem;
-            }
-        }
-        img:nth-child(4){
-            float: right;
-            height: .2rem;
-            margin-right: .2rem;
             margin-top: .05rem;
         }
     }
-.classify-top{
-    height: .38rem;
-    width: 100%;
-    /*margin: 0 .18rem;*/
-    div{
-        width: 1.65rem;
-        height: .26rem;
-        background-color: #fff;
-        color: #ab7246;
-        float: left;
-        text-align: center;
-        font-size: .14rem;
-        margin-top: .12rem;
-        line-height: .26rem;
-    }
-    div:nth-child(1){
-        margin-right: .1rem;
-        margin-left: .18rem;
-    }
-    div.select{
-        height: .38rem;
-        line-height: .38rem;
-        background-color: #ab7246;
-        color:white;
-        border-radius: .05rem .05rem 0 0;
-        margin-top: 0;
-    }
-}
 .content{
-    div{
-        width: 2.5rem;
+    margin-top: .06rem;
+    position: relative;
+    .content-3{
         float: right;
+        width: 2.34rem;
+        height: .85rem;
+        background: url("../assets/微信图片_20190927104556.png") no-repeat center / cover;
+        margin-right: .17rem;
+    }
+    div.content-2{
+        margin-right: .17rem;
+        padding-left: .05rem;
+        width: 2.29rem;
+        float: right;
+        background-color: #fff;
+        margin-bottom: .1rem;
+        >div{
         p:nth-child(1){
-            color: #d3a37e;
-            font-size: .17rem;
+            font-size: .13rem;
             line-height: .5rem;
+            color: #333;
         }
         div{
-            width: .83rem;
-            height: 1.2rem;
+            width: .60rem;
             float: left;
             text-align: center;
-            /*margin-right: .05rem;*/
+            margin-right: .16rem;
             img{
-                height: .72rem;
-                width: .72rem;
+                height: .60rem;
+                width: .60rem;
                 margin-bottom: .05rem;
             }
             p{
-                font-size: .15rem;
+                font-size: .13rem;
+                line-height: .3rem;
+                color: #333;
             }
+        }
         }
     }
     div.content-1{
-        width: 1.2rem;
+        width: 1.14rem;
         float: left;
+
         p{
             height: .5rem;
-            width: 100%;
-            background-color: #d3a37e;
-            color: #fff;
+            background: #fff;
+            color: #333;
             font-size: .15rem;
-            text-align: center;
+            text-align: left;
             line-height: .5rem;
             position: relative;
+            padding-left: .16rem;
         }
         p.border{
-            background-color: #fff;
-            color: #6a3906;
+            background: rgba(0,0,0,0);
+            font-size: .17rem;
         }
         .border:after{
-            height: .46rem;
             content: '';
             position: absolute;
             left: 0;
-            top: .02rem;
+            top: 50%;
             display: block;
-            border: #6a3906 .02rem solid;
+            border: 10px solid rgba(0,0,0,0);
+            border-left-color: #41bd96;
+            width: 0;
+            height: 0;
+            margin-top: -12px;
         }
     }
+
 }
 </style>
