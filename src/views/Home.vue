@@ -6,11 +6,11 @@
     </div>
     <div class="image">
       <div>
-        <div v-for="(item,index) in images">
+        <a :href="item.href" v-for="(item,index) in images">
         <img :src="item.site">
         <img :src="item.src">
         <span>{{item.text}}</span>
-        </div>
+        </a>
       </div>
     </div>
     <div class="group">
@@ -93,7 +93,12 @@
       </div>
     </div>
     </div>
-    <Move></Move>
+    <div class="move">
+      <a :href=item.href v-for="item in move">
+        <span :style="{backgroundImage: 'url(' +item.src + ')'}"></span>
+        <span>{{item.test}}</span>
+      </a>
+    </div>
   </div>
 
 </template>
@@ -119,6 +124,10 @@ import inner7 from '../assets/home/成人@2x.png';
 import inner8 from '../assets/home/特效@2x.png';
 import grout1 from '../assets/home/藿香正气@2x.png';
 import content1 from '../assets/home/感冒灵颗粒@2x.png';
+import src1 from "../assets/home/首页logo@2x.png"
+import src2 from "../assets/home/分类logo@2x.png"
+import src3 from "../assets/home/购物车logo@2x.png"
+import src4 from "../assets/home/我的logo@2x.png"
 
 
 export default {
@@ -145,21 +154,21 @@ export default {
               }],
           images:[
               {
-              site: img1,text:'满减优惠',src:inner1
+              site: img1,text:'满减优惠',src:inner1,href:'javascript:void(0)'
           },{
-              site:img2,text:'每日特惠',src:inner2
+              site:img2,text:'每日特惠',src:inner2,href:'/Daily'
           },{
-              site:img3,text:'团拼折扣',src:inner3
+              site:img3,text:'团拼折扣',src:inner3,href:'javascript:void(0)'
           },{
-              site:img4,text:'新人专享',src:inner4
+              site:img4,text:'新人专享',src:inner4,href:'javascript:void(0)'
           },{
-              site:img5,text:'季节用药',src:inner5
+              site:img5,text:'季节用药',src:inner5,href:'javascript:void(0)'
               },{
-              site:img6,text:'营养滋补',src:inner6
+              site:img6,text:'营养滋补',src:inner6,href:'javascript:void(0)'
               },{
-              site:img7,text:'成人用品',src:inner7
+              site:img7,text:'成人用品',src:inner7,href:'javascript:void(0)'
               },{
-              site:img8,text:'新特效药',src:inner8
+              site:img8,text:'新特效药',src:inner8,href:'javascript:void(0)'
               }],
           group:[
               {src:grout1,text1:'太极藿香正气口服液',text2:'¥18.80',text3:'24.00'
@@ -175,8 +184,20 @@ export default {
           content:[{src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},
               {src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},
               {src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},
-              {src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},]
+              {src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},],
+          move:[{
+              src:src1,test:'首页',href:'/home'
+          },{
+              src:src2,test:'分类',href:'/classify'
+          },{
+              src:src3,test:'购物车',href:'/community'
+          },{
+              src:src4,test:'我的',href:'/mine'
+          }],
       }
+    },
+    methods:{
+
     }
 }
 </script>
@@ -230,20 +251,29 @@ export default {
   background-color: white;
   width: 3.43rem;
   height: 1.66rem;
-  z-index: 3;
+  z-index: 4;
   margin: -.32rem .15rem 0 .15rem;
   border-radius: .09rem;
   overflow: hidden;
-  div{
+  >div{
     height: 100%;
     margin: .08rem  0  0 .14rem;
-    div{
+    >a{
+      text-decoration: none;
+      display: block;
       height: .65rem;
       width: .48rem;
       float: left;
       position: relative;
-      margin-right: .18rem;
+      margin-right: .4rem;
       color: #333;
+      margin-top: .1rem;
+      &:nth-child(4){
+        margin-right: 0;
+      }
+      &:nth-child(8){
+        margin-right: 0;
+      }
       img:nth-child(1){
         height: .45rem;
 
@@ -393,4 +423,35 @@ export default {
     }
   }
 }
+  .move{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: .5rem;
+    background-color: #fff;
+    z-index: 10;
+    /*padding-left: .35rem;*/
+    a{
+      float: left;
+      height: .5rem;
+      width: .9rem;
+      text-decoration: none;
+      color: #333;
+      font-size: .1rem;
+      text-align: center;
+      padding-top: .1rem;
+      &:nth-child(1){
+        span{
+          color: #41bd96;
+        }
+      }
+      span:nth-child(1){
+        display: block;
+        width: .21rem;
+        height: .21rem;
+        background: no-repeat center / cover;
+        margin: 0 auto;
+      }
+    }
+  }
 </style>

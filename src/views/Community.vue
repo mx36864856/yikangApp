@@ -1,289 +1,260 @@
 <template>
     <div class="community">
-       <nav-component></nav-component>
-        <div class="title">
-            <div v-on:click="tab(index)" v-for="(item,index) in title"  :class="{border: curId === index}">{{item.text}}</div>
+        <div class="header">
+            <span>购物车  (0件)</span>
+            <span>管理</span>
         </div>
-        <div class="title-1 select show" >
-            <div class="title-1-top" v-for="(item,index) in cont">
-                <span><img :src="item.src"></span>
-                <span>{{item.text}}</span>
-            </div>
-            <div class="title-1-bottom">
-                <div class="bottom-1" v-for="(item,index) in bottom">
-                    <div :style="{backgroundImage:'url('+ item.src +')'}"></div>
-                    <div>
-                        <p>{{item.one}}</p>
-                        <p>{{item.two}}</p>
-                        <p>{{item.three}}</p>
-                    </div>
-                    <span>{{item.four}}</span>
-                </div>
+        <div class="content">
+            <div>
+                <img src="../assets/community1/shopping_design@2x.png">
+                <p>购物车竟然是空的</p>
+                <p>主人快给我挑点宝贝吧~</p>
+                <div>去逛逛</div>
+
             </div>
         </div>
-        <div class="title-2 select">
-            <div class="top">
-                <span>全部商圈<img src="../assets/箭头.svg"></span>
-                <span>智能排序<img src="../assets/箭头.svg"></span>
-                <span>筛选<img src="../assets/箭头.svg"></span>
+        <div class="product">
+            <p>可能帮到你</p>
+            <div>
+                <div><img src="../assets/community1/shopping_img1@2x.png"></div>
+                <div><img src="../assets/community1/shopping_img2@2x.png"></div>
             </div>
-                <div class="pic" v-for="(item,index) in bottom_2">
-                    <div :style="{backgroundImage:'url('+ item.src +')'}"></div>
-                    <div>
-                        <p>{{item.one}}</p>
-                        <p>{{item.two}}</p>
-                    </div>
-                    <span>{{item.four}}</span>
-                </div>
         </div>
-        <Move></Move>
+        <div class="bottom">
+            <div></div>
+            <div>结算</div>
+            <div>
+            <p>合计: <span>￥0</span></p>
+            <p>不含运费</p>
+        </div>
+        </div>
+        <div class="move">
+            <a :href=item.href v-for="item in move">
+                <span :style="{backgroundImage: 'url(' +item.src + ')'}"></span>
+                <span>{{item.test}}</span>
+            </a>
+        </div>
     </div>
 </template>
 
 <script>
-    import Move from "../components/move";
     import NavComponent from "../components/header-Component";
-    import img1 from "../assets/community1/anquan@2x.png";
-    import img2 from "../assets/community1/zicha@2x.png";
-    import img3 from "../assets/community1/yao@2x.png";
-    import img4 from "../assets/community1/zhishi@2x.png";
-    import bottom1 from "../assets/community1/u=1083058977,800330093&fm=26&gp=0@2x.png";
-    import bottom2 from "../assets/community1/u=306386875,768612393&fm=11&gp=0@2x.png";
-    import bottom3 from "../assets/community1/u=2846550785,2572289646&fm=26&gp=0@2x.png";
-    import content1 from "../assets/commumity2/u=4148900907,3699594255&fm=26&gp=0@2x.png";
-    import content2 from "../assets/commumity2/4@2x.png";
-    import content3 from "../assets/commumity2/u=118244653,3245939313&fm=26&gp=0@2x.png";
-    import content4 from "../assets/commumity2/u=2019289494,2726267960&fm=26&gp=0@2x.png";
+    import src1 from "../assets/home/首页logo@2x.png"
+    import src2 from "../assets/home/分类logo@2x.png"
+    import src3 from "../assets/home/shopping_icon@2x.png"
+    import src4 from "../assets/home/我的logo@2x.png"
 
     export default {
         name: "Community",
         components: {
             NavComponent,
-            Move
         },
         data(){
             return{
-                curId: 0,
-                title:[
-                    {
-                    text:'养宠心得',
+                move:[{
+                    src:src1,test:'首页',href:'/home'
                 },{
-                    text:'萌宠之家'
-                }],
-                cont:[
-                    {
-                    src:img1,text:'饮食安全'
+                    src:src2,test:'分类',href:'/classify'
                 },{
-                    src:img2,text:'病症自查'
+                    src:src3,test:'购物车',href:'/community'
                 },{
-                    src:img3,text:'驱虫选药'
-                },{
-                    src:img4,text:'知识库'
-                },],
-                bottom:[{
-                    src:bottom1,one:'星言家',two:'家庭伦理剧之喵的相处',three:'有时候想给猫咪找个伴',four:'点赞  168'
-                },{
-                    src:bottom2,one:'萌宠星球',two:'夏日补水小能手',three:'众所周知主食是可以满足主子们...',four:'点赞  145'
-                },{
-                    src:bottom3,one:'E博士',two:'猫粮该怎么选？看这篇就够了',three:'猫粮该怎么选？看这篇就够了',four:'点赞  233'
-                }],
-                bottom_2:[{
-                    src:content1,one:'宠物小屋',two:'省体育场 宠物店',four:'<100m'
-                },{
-                    src:content2,one:'宠Ta萌宠生活馆',two:'小雁塔 宠物店',four:'167m'
-                },{
-                    src:content3,one:'火星宠物',two:'小雁塔 宠物店',four:'237m'
-                },{
-                    src:content4,one:'宠物小屋',two:'宠物小屋',four:'577m'
+                    src:src4,test:'我的',href:'/mine'
                 }],
             }
         },
         methods: {
-            tab (index) {
-                this.curId = index;
-                let content = document.querySelectorAll('.select');
-                for (let i = 0; i < content.length; i++){
-                    content[i].classList.remove('show');
-                }
-                content[index].classList.add('show')
-            }
-        }
+              }
     }
 </script>
 
 <style lang="scss" scoped>
-.title{
-    margin: 0 .15rem;
+    html{
+        background-color: #f7f5ef;
+    }
+    .community{
 
-    div{
-        background-color: #fff;
-        float: left;
-        width: 1.7rem;
-        height: .45rem;
-        font-size: .18rem;
-        color: #333;
-        text-align: center;
-        line-height: .45rem;
-        position: relative;
-        &:nth-child(1){
-            border-radius: .1rem 0 0 .1rem;
-        }
-        &:nth-child(2){
-            border-radius: 0 .1rem .1rem 0;
-        }
-    }
-    .border:after{
-        content: '';
-        display: block;
-        position: absolute;
-        height: 0;
-        width: .46rem;
-        bottom: 0;
-        left: .6rem;
-        border: #ab7246 .01rem solid;
-    }
-}
-.community{
-    div:nth-child(2){}
-    background-color: black;
-}
-.title-1{
-    .title-1-top{
-        width: .55rem;
-        height: .5rem;
-        float: left;
-        margin: .15rem .17rem .3rem .2rem;
-        font-size: .13rem;
-        text-align: center;
-        span{
-            display: block;
-
-            &:nth-child(1){
-                height: .3rem;
-                width: .3rem;
-                margin: 0 auto;
-                background-color: #AB7246;
-                border-radius: .05rem;
-                img{
-                   height: .14rem;
-                    margin-top: .08rem;
-                }
-            }
-        }
-    }
-    .title-1-bottom{
-       float: left;
-        padding: 0 .15rem;
-        .bottom-1{
-            height: .77rem;
-            width: 3.25rem;
-            background-color: #fff;
-            border-radius: .13rem;
-            padding: .1rem .1rem;
-            margin-bottom: .2rem;
-            position: relative;
-            span{
-                display: block;
-                position: absolute;
-                right: 0;
-                top: .15rem;
-                color: #ff8300;
-                font-size: .1rem;
-                margin-right: .1rem;
-            }
-            div{
-                float: left;
-                &:nth-child(1){
-                    border-radius: .13rem;
-                    height: .77rem;
-                    width: .79rem;
-                    background: no-repeat center / cover;
-                }
-                &:nth-child(2){
-                    margin-left: .15rem;
-                    p:nth-child(1){
-                        font-size: .17rem;
-                        margin-bottom: .1rem;
-                        color: #333;
-                    }
-                    p:nth-child(2){
-                        font-size: .14rem;
-                        margin-bottom: .08rem;
-                        color: #666;
-                    }
-                    p:nth-child(3){
-                        font-size: .11rem;
-                        color: #999;
-                    }
-                }
-            }
-
-        }
-    }
-}
-.title-2{
-    width: 100%;
-    .top{
-        height: .5rem;
-        float: left;
-        display: flex;
-        margin: 0 .15rem;
-    span{
-        display: block;
-        float: left;
-        width: .88rem;
-        height: .16rem;
-        line-height: .5rem;
-        font-size: .17rem;
-        margin-right: .44rem;
-        position: relative;
-        img{
-            height: .16rem;
-        }
-    }
-    }
-    .pic{
-        background-color: #fff;
-        float: left;
+    .header{
         width: 100%;
-        padding: .1rem .18rem .11rem .15rem;
-        margin-bottom: .15rem;
+        height:.4rem;
+        padding-top: .1rem;
+        background-color: #00be95;
+        text-align: center;
         position: relative;
-        div{
-            float: left;
+        >span:nth-child(1){
+            font-size: .18rem;
+            color: white;
+            line-height: .4rem;
+            padding-left: .4rem;
         }
-        div:nth-child(1){
-            height: .76rem;
-            width: .79rem;
-            border-radius: .05rem;
-            position: relative;
-            background: no-repeat center / cover;
-        }
-        div:nth-child(2){
-            padding-left: .1rem;
-            p:nth-child(1){
-                padding-top: .17rem;
-                font-size: .17rem;
-                color: #333;
-                padding-bottom: .1rem;
-            }
-            p:nth-child(2){
-                font-size: .12rem;
-            }
-        }
-        span{
+        span:nth-child(2){
             position: absolute;
-            bottom: .21rem;
-            right: .51rem;
-            font-size: .12rem;
-
+            right: .16rem;
+            bottom: .12rem;
+            color: white;
+            font-size: .15rem;
         }
     }
-}
-.community .select{
-    display: none;
-}
-.community .select.show{
-        display: block;
+        .content{
+            text-align: center;
+        img{
+            display: block;
+            margin: 0 auto;
+            height: .83rem;
+            width: .53rem;
+            margin-top: .53rem;
+        }
+        p:nth-child(2){
+            margin-top: .23rem;
+            font-size: .14rem;
+            color: #333;
+        }
+            p:nth-child(3){
+                margin-top: .08rem;
+                font-size: .13rem;
+                color: #666;
+            }
+            >div{
+                div{
+                    width:1rem;
+                    height:0.4rem;
+                    border:.01rem solid rgba(67,233,123,1);
+                    border-radius:0.2rem;
+                    line-height: .4rem;
+                    margin: 0 auto;
+                    margin-top: .2rem;
+                }
+            }
+
+        }
+        .product{
+            text-align: center;
+            p:nth-child(1){
+                margin-top: .74rem;
+                font-size: .13rem;
+                color: #666;
+                position: relative;
+            }
+            p:nth-child(1):after{
+                content: '';
+                position: absolute;
+                display: block;
+                left: .9rem;
+                bottom: .1rem;
+                width:0.5rem;
+                height:0.01rem;
+                background:rgba(153,153,153,1);
+            }
+            p:nth-child(1):before{
+                content: '';
+                position: absolute;
+                display: block;
+                right: .9rem;
+                bottom: .1rem;
+                width:0.5rem;
+                height:0.01rem;
+                background:rgba(153,153,153,1);
+            }
+            >div{
+                margin: .2rem .16rem 0 .16rem;
+                >div{
+                    float: left;
+                    margin-right: .1rem;
+                    width:1.65rem;
+                    height:1.7rem;
+                    background:rgba(255,255,255,1);
+                    box-shadow:0rem 0rem 0rem 0rem rgba(224,222,220,0.4);
+                    border-radius:0.1rem;
+                    img{
+                        height: 1.35rem;
+                        display: block;
+                        margin: .22rem auto;
+
+                    }
+                    &:nth-child(2){
+                        margin-right: 0;
+                    }
+                }
+
+            }
+        }
+        .bottom{
+            position: fixed;
+            bottom: .5rem;
+            height: .44rem;
+            width: 100%;
+            background-color: #fff;
+            border:.01rem solid rgba(191,191,191,1);
+            div:nth-child(1){
+                width:0.15rem;
+                height:0.15rem;
+                border:.01rem solid rgba(51,51,51,1);
+                border-radius:50%;
+                float: left;
+                margin-left: .16rem;
+                margin-top: .175rem;
+            }
+            div:nth-child(2){
+                float: right;
+                margin-right: .16rem;
+                width:0.7rem;
+                height:0.3rem;
+                background:rgba(65,189,150,1);
+                border-radius:.15rem;
+                margin-top: .07rem;
+                line-height: .3rem;
+                text-align: center;
+                color: white;
+                font-size: .15rem;
+            }
+            div:nth-child(3){
+                float: right;
+                margin-right: .1rem;
+                font-size: .1rem;
+                line-height: .2rem;
+                padding-top: .05rem;
+                p:nth-child(1){
+                    color: #333;
+                    span{
+                        color: #ff0000;
+                        font-size: .15rem;
+                    }
+                }
+                p:nth-child(2){
+                    color: #999;
+                    text-align: right;
+                }
+            }
+        }
+        .move{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: .5rem;
+            background-color: #fff;
+            z-index: 10;
+            /*padding-left: .35rem;*/
+            a{
+                float: left;
+                height: .5rem;
+                width: .9rem;
+                text-decoration: none;
+                color: #333;
+                font-size: .1rem;
+                text-align: center;
+                padding-top: .1rem;
+                &:nth-child(3){
+                    span{
+                        color: #41bd96;
+                    }
+                }
+                span:nth-child(1){
+                    display: block;
+                    width: .21rem;
+                    height: .21rem;
+                    background: no-repeat center / cover;
+                    margin: 0 auto;
+                }
+            }
+        }
     }
 </style>

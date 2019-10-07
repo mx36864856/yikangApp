@@ -29,7 +29,12 @@
                 <span>{{item.text}}</span>
             </div>
         </div>
-        <Move></Move>
+        <div class="move">
+            <a  :href=item.href v-for="item in move">
+                <span :style="{backgroundImage: 'url(' +item.src + ')'}"></span>
+                <span>{{item.test}}</span>
+            </a>
+        </div>
     </div>
 </template>
 
@@ -39,6 +44,10 @@
     import img2 from '../assets/mine/daifahuo icon@2x.png'
     import img3 from '../assets/mine/daishouhuo icon@2x.png'
     import img4 from '../assets/mine/daipingjia icon@2x.png'
+    import src1 from "../assets/home/首页logo@2x.png"
+    import src2 from "../assets/home/分类logo@2x.png"
+    import src3 from "../assets/home/购物车logo@2x.png"
+    import src4 from "../assets/home/my icon@2x.png"
 
     export default {
         name: "Mine",components: {
@@ -75,15 +84,26 @@
                     href:img1,text:'我的萌宠'
                 },{
                     href:img2,text:'我的订单'
-                },]
+                },],
+                move:[{
+                    src:src1,test:'首页',href:'/home'
+                },{
+                    src:src2,test:'分类',href:'/classify'
+                },{
+                    src:src3,test:'购物车',href:'/community'
+                },{
+                    src:src4,test:'我的',href:'/mine'
+                }],
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
+    body{
+        background-color: #f6f7f8;
+    }
     .mine{
-        background-color: #f7f5ef;
         .header{
             width: 100%;
             height: 1.5rem;
@@ -212,6 +232,37 @@
                     line-height: .4rem;
                     font-size: .13rem;
                     color: #666;
+                }
+            }
+        }
+        .move{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: .5rem;
+            background-color: #fff;
+            z-index: 10;
+            /*padding-left: .35rem;*/
+            a{
+                float: left;
+                height: .5rem;
+                width: .9rem;
+                text-decoration: none;
+                color: #333;
+                font-size: .1rem;
+                text-align: center;
+                padding-top: .1rem;
+                &:nth-child(4){
+                    span{
+                        color: #41bd96;
+                    }
+                }
+                span:nth-child(1){
+                    display: block;
+                    width: .21rem;
+                    height: .21rem;
+                    background: no-repeat center / cover;
+                    margin: 0 auto;
                 }
             }
         }

@@ -8,6 +8,7 @@ import  Catalogue from './views/Catalogue.vue'
 import  Space from './views/Space.vue'
 import  Set from './views/Set.vue'
 import  Material from './views/Material.vue'
+import  Daily from './views/Daily.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -59,6 +60,10 @@ export default new Router({
           path: '/material',
           name: 'material',
           component: Material
+      },{
+          path: '/daily',
+          name: 'daily',
+          component: Daily
       }
   ]
 })

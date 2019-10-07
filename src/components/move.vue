@@ -1,6 +1,6 @@
 <template>
     <div class="move">
-        <a :href=item.href v-for="item in text">
+        <a v-on:click="tab" :href=item.href v-for="item in text">
             <span :style="{backgroundImage: 'url(' +item.src + ')'}"></span>
             <span>{{item.test}}</span>
         </a>
@@ -16,7 +16,7 @@
         name: "sousuo",
         data(){
             return{
-                text:[{
+                move:[{
                     src:src1,test:'首页',href:'/home'
                 },{
                     src:src2,test:'分类',href:'/classify'
@@ -28,7 +28,7 @@
             }
         },methods: {
             tab (index) {
-                this.curId = index;
+                console.log(window.location)
             }
         }
     }

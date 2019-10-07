@@ -47,8 +47,11 @@
 </script>
 
 <style lang="scss" scoped>
+    body{
+        background-color: #f6f7f8;
+    }
 .material{
-    background-color: #f7f5ef;
+
     .header{
         width: 100%;
         height:.4rem;

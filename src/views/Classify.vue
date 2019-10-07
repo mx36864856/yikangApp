@@ -47,7 +47,12 @@
                 </div>
             </div>
         </div>
-        <Move></Move>
+        <div class="move">
+            <a :href=item.href v-for="item in move">
+                <span :style="{backgroundImage: 'url(' +item.src + ')'}"></span>
+                <span>{{item.test}}</span>
+            </a>
+        </div>
     </div>
 </template>
 
@@ -55,6 +60,10 @@
     import Move from "../components/move";
     import NavComponent from "../components/header-Component";
     import img from "../assets/classify/u=2614015722,3752731499&fm=26&gp=0@2x.png";
+    import src1 from "../assets/home/首页logo@2x.png"
+    import src2 from "../assets/home/2分类logo@2x.png"
+    import src3 from "../assets/home/购物车logo@2x.png"
+    import src4 from "../assets/home/我的logo@2x.png"
     export default {
         name: "Classify",
         components: {
@@ -99,7 +108,15 @@
                 },{
                     url:img,text:'感冒发烧'
                 },],
-
+                move:[{
+                    src:src1,test:'首页',href:'/home'
+                },{
+                    src:src2,test:'分类',href:'/classify'
+                },{
+                    src:src3,test:'购物车',href:'/community'
+                },{
+                    src:src4,test:'我的',href:'/mine'
+                }],
             }
         },
         methods: {
@@ -228,4 +245,35 @@
     }
 
 }
+    .move{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: .5rem;
+        background-color: #fff;
+        z-index: 10;
+        /*padding-left: .35rem;*/
+        a{
+            float: left;
+            height: .5rem;
+            width: .9rem;
+            text-decoration: none;
+            color: #333;
+            font-size: .1rem;
+            text-align: center;
+            padding-top: .1rem;
+            &:nth-child(2){
+                span{
+                    color: #41bd96;
+                }
+            }
+            span:nth-child(1){
+                display: block;
+                width: .21rem;
+                height: .21rem;
+                background: no-repeat center / cover;
+                margin: 0 auto;
+            }
+        }
+    }
 </style>
