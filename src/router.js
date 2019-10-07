@@ -7,6 +7,7 @@ import  Community from './views/Community.vue'
 import  Catalogue from './views/Catalogue.vue'
 import  Space from './views/Space.vue'
 import  Set from './views/Set.vue'
+import  Material from './views/Material.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -54,6 +55,10 @@ export default new Router({
           path: '/set',
           name: 'set',
           component: Set
-      },
+      },{
+          path: '/material',
+          name: 'material',
+          component: Material
+      }
   ]
 })

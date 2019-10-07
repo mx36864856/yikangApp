@@ -33,7 +33,6 @@
                 <img src="../assets/mine/)@2x.png">
             </div>
         </div>
-        <Move></Move>
     </div>
 </template>
 
