@@ -1,9 +1,9 @@
 <template>
     <div class="move">
-        <a v-on:click="tab" :href=item.href v-for="item in text">
-            <span :style="{backgroundImage: 'url(' +item.src + ')'}"></span>
+        <router-link class="bottom" :to=item.href v-for="item in text">
+            <span ></span>
             <span>{{item.test}}</span>
-        </a>
+        </router-link>
     </div>
 </template>
 
@@ -13,10 +13,10 @@
     import src3 from "../assets/home/购物车logo@2x.png"
     import src4 from "../assets/home/我的logo@2x.png"
     export default {
-        name: "sousuo",
+        name: "move",
         data(){
             return{
-                move:[{
+                text:[{
                     src:src1,test:'首页',href:'/home'
                 },{
                     src:src2,test:'分类',href:'/classify'
@@ -43,7 +43,7 @@
     background-color: #fff;
     z-index: 10;
     /*padding-left: .35rem;*/
-    a{
+    .bottom{
         float: left;
         height: .5rem;
         width: .9rem;
@@ -56,9 +56,77 @@
             display: block;
             width: .21rem;
             height: .21rem;
-            background: no-repeat center / cover;
             margin: 0 auto;
         }
+        &:nth-child(1){
+            span:nth-child(1){
+                background: url("../assets/home/shouye icon@2x.png") no-repeat center / cover;
+            }
+        }
+        &:nth-child(2){
+            span:nth-child(1){
+                background: url("../assets/home/分类logo@2x.png") no-repeat center / cover;
+            }
+        }
+        &:nth-child(3){
+            span:nth-child(1){
+                background: url("../assets/home/购物车logo@2x.png") no-repeat center / cover;
+            }
+        }
+        &:nth-child(4){
+            span:nth-child(1){
+                background: url("../assets/home/我的logo@2x.png") no-repeat center / cover;
+            }
+        }
     }
+    .bottom:nth-child(1).router-link-active{
+        span:nth-child(1){
+            display: block;
+            width: .21rem;
+            height: .21rem;
+            margin: 0 auto;
+            background: url("../assets/home/shouye icon@2x.png") no-repeat center / cover;
+        }
+        span:nth-child(2){
+            color: #41bd96;
+        }
+    }
+    .bottom:nth-child(2).router-link-active{
+        span:nth-child(1){
+            display: block;
+            width: .21rem;
+            height: .21rem;
+            margin: 0 auto;
+            background: url("../assets/home/2分类logo@2x.png") no-repeat center / cover;
+        }
+        span:nth-child(2){
+            color: #41bd96;
+        }
+    }
+    .bottom:nth-child(3).router-link-active{
+        span:nth-child(1){
+            display: block;
+            width: .21rem;
+            height: .21rem;
+            margin: 0 auto;
+            background: url("../assets/home/shopping_icon@2x.png") no-repeat center / cover;
+        }
+        span:nth-child(2){
+            color: #41bd96;
+        }
+    }
+    .bottom:nth-child(4).router-link-active{
+        span:nth-child(1){
+            display: block;
+            width: .21rem;
+            height: .21rem;
+            margin: 0 auto;
+            background: url("../assets/home/my icon@2x.png") no-repeat center / cover;
+        }
+        span:nth-child(2){
+            color: #41bd96;
+        }
+    }
+
 }
 </style>
