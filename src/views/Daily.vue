@@ -13,8 +13,12 @@
 </template>
 
 <script>
+
     export default {
-        name: "Daily"
+        name: "Daily",
+        data(){
+        return{}
+        }
     }
 </script>
 

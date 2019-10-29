@@ -17,7 +17,7 @@
         data(){
             return{
                 text:[{
-                    src:src1,test:'首页',href:'/home'
+                    src:src1,test:'首页',href:'/'
                 },{
                     src:src2,test:'分类',href:'/classify'
                 },{
@@ -42,9 +42,11 @@
     height: .5rem;
     background-color: #fff;
     z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     /*padding-left: .35rem;*/
     .bottom{
-        float: left;
         height: .5rem;
         width: .9rem;
         text-decoration: none;
@@ -57,6 +59,7 @@
             width: .21rem;
             height: .21rem;
             margin: 0 auto;
+            margin-bottom: .02rem;
         }
         &:nth-child(1){
             span:nth-child(1){
@@ -79,48 +82,52 @@
             }
         }
     }
-    .bottom:nth-child(1).router-link-active{
+    .bottom:nth-child(1).router-link-exact-active{
         span:nth-child(1){
             display: block;
             width: .21rem;
             height: .21rem;
             margin: 0 auto;
-            background: url("../assets/home/shouye icon@2x.png") no-repeat center / cover;
+            margin-bottom: .02rem;
+            background: url("../assets/home/首页logo@2x.png") no-repeat center / cover;
         }
         span:nth-child(2){
             color: #41bd96;
         }
     }
-    .bottom:nth-child(2).router-link-active{
+    .bottom:nth-child(2).router-link-exact-active{
         span:nth-child(1){
             display: block;
             width: .21rem;
             height: .21rem;
             margin: 0 auto;
+            margin-bottom: .02rem;
             background: url("../assets/home/2分类logo@2x.png") no-repeat center / cover;
         }
         span:nth-child(2){
             color: #41bd96;
         }
     }
-    .bottom:nth-child(3).router-link-active{
+    .bottom:nth-child(3).router-link-exact-active{
         span:nth-child(1){
             display: block;
             width: .21rem;
             height: .21rem;
             margin: 0 auto;
+            margin-bottom: .02rem;
             background: url("../assets/home/shopping_icon@2x.png") no-repeat center / cover;
         }
         span:nth-child(2){
             color: #41bd96;
         }
     }
-    .bottom:nth-child(4).router-link-active{
+    .bottom:nth-child(4).router-link-exact-active{
         span:nth-child(1){
             display: block;
             width: .21rem;
             height: .21rem;
             margin: 0 auto;
+            margin-bottom: .02rem;
             background: url("../assets/home/my icon@2x.png") no-repeat center / cover;
         }
         span:nth-child(2){

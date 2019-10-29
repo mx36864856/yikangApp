@@ -2,7 +2,7 @@
   <div class="home">
     <nav-component></nav-component>
     <div class="banner">
-      <a href="javascript:void (0)"></a>
+      <a href="javascript:void (0)" ></a>
     </div>
     <div class="image">
       <div>
@@ -93,12 +93,7 @@
       </div>
     </div>
     </div>
-    <div class="move">
-      <a :href=item.href v-for="item in move">
-        <span :style="{backgroundImage: 'url(' +item.src + ')'}"></span>
-        <span>{{item.test}}</span>
-      </a>
-    </div>
+    <move></move>
   </div>
 
 </template>
@@ -124,10 +119,8 @@ import inner7 from '../assets/home/成人@2x.png';
 import inner8 from '../assets/home/特效@2x.png';
 import grout1 from '../assets/home/藿香正气@2x.png';
 import content1 from '../assets/home/感冒灵颗粒@2x.png';
-import src1 from "../assets/home/首页logo@2x.png"
-import src2 from "../assets/home/分类logo@2x.png"
-import src3 from "../assets/home/购物车logo@2x.png"
-import src4 from "../assets/home/我的logo@2x.png"
+
+
 
 
 export default {
@@ -185,20 +178,11 @@ export default {
               {src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},
               {src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},
               {src:content1,p1:'三九感冒灵颗粒',p2:'感冒引起的头痛、发热、鼻...',p3:''},],
-          move:[{
-              src:src1,test:'首页',href:'/home'
-          },{
-              src:src2,test:'分类',href:'/classify'
-          },{
-              src:src3,test:'购物车',href:'/community'
-          },{
-              src:src4,test:'我的',href:'/mine'
-          }],
       }
     },
     methods:{
 
-    }
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -220,12 +204,15 @@ export default {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: #f6f7f8;
+    background: #fff;
     padding: 0 .15rem 0 .15rem;
+    display: flex;
+    /*flex-wrap: wrap;*/
+    justify-content: space-around ;
     a{
       font-size:0.16rem;
       display: block;
-      color:black;
+      color:#333;
       float: left;
       text-decoration: none;
       margin: .15rem .09rem 0 0;
@@ -423,35 +410,4 @@ export default {
     }
   }
 }
-  .move{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: .5rem;
-    background-color: #fff;
-    z-index: 10;
-    /*padding-left: .35rem;*/
-    a{
-      float: left;
-      height: .5rem;
-      width: .9rem;
-      text-decoration: none;
-      color: #333;
-      font-size: .1rem;
-      text-align: center;
-      padding-top: .1rem;
-      &:nth-child(1){
-        span{
-          color: #41bd96;
-        }
-      }
-      span:nth-child(1){
-        display: block;
-        width: .21rem;
-        height: .21rem;
-        background: no-repeat center / cover;
-        margin: 0 auto;
-      }
-    }
-  }
 </style>
